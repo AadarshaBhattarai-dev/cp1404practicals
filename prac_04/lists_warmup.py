@@ -14,6 +14,3 @@ print("Elements except first two:", numbers[2:])
 
 # 4. Print whether 9 is an element of numbers
 print("Is 9 in numbers?", 9 in numbers)
-
-# Print the final list so you can visually inspect changes
-print("Final numbers list:", numbers)
