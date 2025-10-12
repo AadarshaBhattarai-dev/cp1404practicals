@@ -7,7 +7,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     subjects = load_data(FILENAME)
-    print(subjects)  # Print the raw nested list
+    print(subjects)
     print_report(subjects)
 
 def load_data(filename):
