@@ -7,9 +7,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     subjects = load_subjects(FILENAME)
-    # Print the nested list
     print(subjects)
-    # Then print the formatted report
     display_subjects(subjects)
 
 
@@ -22,12 +20,10 @@ def load_subjects(filename=FILENAME):
             if not line:
                 continue
             parts = line.split(",")
-            # Ensure we have three parts before proceeding
             if len(parts) < 3:
                 continue
             code = parts[0].strip()
             lecturer = parts[1].strip()
-            # Convert student count to integer if possible
             try:
                 students = int(parts[2].strip())
             except ValueError:
