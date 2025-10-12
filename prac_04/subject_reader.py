@@ -7,32 +7,29 @@ FILENAME = "subject_data.txt"
 
 def main():
     subjects = load_subjects(FILENAME)
-    print(subjects)
-    display_subjects(subjects)
+    print(subjects)  # Print the raw nested list
+    print_report(subjects)
 
-
-def load_subjects(filename=FILENAME):
-    """Read data from file formatted like: subject,lecturer,number of students."""
+def load_subjects(filename):
+    """Read data from a file and return a list of [subject, lecturer, students]."""
     subjects = []
-    with open(filename, "r") as input_file:
-        for line in input_file:
+    with open(filename, "r") as file:
+        for line in file:
             line = line.strip()
-            if not line:
-                continue
-            parts = line.split(",")
-            if len(parts) < 3:
-                continue
-            code = parts[0].strip()
-            lecturer = parts[1].strip()
-            try:
-                students = int(parts[2].strip())
-            except ValueError:
-                students = 0
-            subjects.append([code, lecturer, students])
+            if line:
+                parts = line.split(",")
+                try:
+                    students = int(parts[2])
+                except ValueError:
+                    students = 0
+                subjects.append([parts[0], parts[1], students])
     return subjects
 
-def display_subjects(subjects):
-    for code, lecturer, students in subjects:
+def print_report(subjects):
+    for subject in subjects:
+        code = subject[0]
+        lecturer = subject[1]
+        students = subject[2]
         print(f"{code} is taught by {lecturer} and has {students} students")
 
 main()
