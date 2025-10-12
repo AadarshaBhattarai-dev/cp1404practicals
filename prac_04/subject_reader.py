@@ -15,16 +15,14 @@ def load_data(filename):
     subjects = []
     with open(filename, "r") as input_file:
         for line in input_file:
-            line = line.strip()  # Remove newline characters
-            if line:  # Skip empty lines
-                parts = line.split(",")  # Split into [subject, lecturer, students]
-                # Convert student number to integer safely
+            line = line.strip()
+            if line:
+                parts = line.split(",")
                 students = int(parts[2]) if parts[2].isdigit() else 0
                 subjects.append([parts[0], parts[1], students])
     return subjects
 
 def print_report(subjects):
-    """Print each subject in a readable format."""
     for code, lecturer, students in subjects:
         print(f"{code} is taught by {lecturer} and has {students} students")
 
