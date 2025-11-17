@@ -11,7 +11,7 @@ from kivy.uix.label import Label
 class DynamicLabelsCleanApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.people = ["Alice", "Bob", "Charlie", "Diana", "Ethan", "Fiona"]
+        self.people = ["Alice", "Josh", "Harry", "Tobi", "Ethan", "Vik"]
 
     def build(self):
         self.title = "Dynamic Labels - Clean Version"
