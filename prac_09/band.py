@@ -25,3 +25,4 @@ class Band:
                 m.play()
             except AttributeError:
                 print(m)
+
